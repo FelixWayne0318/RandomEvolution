@@ -1,0 +1,37 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://felixwayne0318.github.io/"
+    },
+    {
+      "pattern": "^https://creativecommons.org/"
+    },
+    {
+      "pattern": "^https://anthropic.com"
+    },
+    {
+      "pattern": "^https://claude.ai"
+    },
+    {
+      "pattern": "^https://github.com/anthropics/"
+    },
+    {
+      "pattern": "^https://fonts.googleapis.com/"
+    }
+  ],
+  "replacementPatterns": [],
+  "httpHeaders": [
+    {
+      "urls": ["https://github.com/", "https://api.github.com/"],
+      "headers": {
+        "Accept": "text/html",
+        "User-Agent": "Mozilla/5.0"
+      }
+    }
+  ],
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206, 301, 302, 308]
+}

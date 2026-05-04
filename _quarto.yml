@@ -1,0 +1,130 @@
+project:
+  type: book
+  output-dir: _book
+
+# =============================================================================
+# 书籍元数据
+# =============================================================================
+book:
+  title: "随机演化论"
+  subtitle: "随机性如何塑造宇宙、生命与文明"
+  author:
+    - name: "魏永江"
+  date: today
+  date-format: "YYYY 年 M 月"
+  language: zh
+  description: |
+    从一条公理出发，推导出五条核心定律和一系列推论，
+    用统一的演化逻辑解释从宇宙到文明的一切系统兴衰。
+  keyword: "随机演化, 复杂系统, 反脆弱, 演化型系统, 崩溃与重组, 科普"
+  search: true
+  repo-url: https://github.com/FelixWayne0318/RandomEvolution
+  repo-branch: main
+  repo-actions: [edit, issue]
+  sharing: [twitter, linkedin]
+  page-footer:
+    left: "© 2026 魏永江 · 本作品采用 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-Hans) 许可"
+    right: "用 [Quarto](https://quarto.org) 构建"
+  sidebar:
+    style: docked
+    collapse-level: 2
+  chapters:
+    - index.qmd
+    - 引言初稿.md
+    - part: "第一部分：理论篇"
+      chapters:
+        - 第一部分_理论篇.md
+    - part: "第二部分：应用篇"
+      chapters:
+        - 第二部分_应用篇/01_宇宙.md
+        - 第二部分_应用篇/02_生命.md
+        - 第二部分_应用篇/03_生态.md
+        - 第二部分_应用篇/04_社会.md
+        - 第二部分_应用篇/05_文明.md
+        - 第二部分_应用篇/06_经济.md
+        - 第二部分_应用篇/07_技术.md
+    - part: "第三部分：哲学篇"
+      chapters:
+        - 第三部分_哲学篇.md
+    - part: "第四部分：未来篇"
+      chapters:
+        - 第四部分_未来篇.md
+
+# =============================================================================
+# 引用与参考文献
+# =============================================================================
+bibliography: references.bib
+citation-location: document
+link-citations: true
+
+# =============================================================================
+# 交叉引用（图、表、定理、定律等）
+# =============================================================================
+crossref:
+  fig-title: "图"
+  tbl-title: "表"
+  title-delim: " · "
+  fig-prefix: "图"
+  tbl-prefix: "表"
+  ref-hyperlink: true
+  custom:
+    - kind: float
+      reference-prefix: "定律"
+      key: "law"
+      latex-env: "law"
+    - kind: float
+      reference-prefix: "定理"
+      key: "thm"
+      latex-env: "thm"
+
+# =============================================================================
+# 自定义渲染过滤器
+# =============================================================================
+filters:
+  - filters/github-alerts.lua
+
+# =============================================================================
+# 输出格式
+# =============================================================================
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [darkly, theme.scss]
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: "本章目录"
+    number-sections: false
+    smooth-scroll: true
+    anchor-sections: true
+    citations-hover: true
+    footnotes-hover: true
+    link-external-newwindow: true
+    mermaid:
+      theme: neutral
+
+  pdf:
+    documentclass: scrbook
+    classoption: ["UTF8", "openany", "fontset=none"]
+    pdf-engine: xelatex
+    CJKmainfont: "Noto Serif CJK SC"
+    CJKsansfont: "Noto Sans CJK SC"
+    mainfont: "Latin Modern Roman"
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=2.5cm
+      - right=2.5cm
+    linestretch: 1.5
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    colorlinks: true
+
+  epub:
+    toc: true
+    toc-depth: 3
+    epub-cover-image: false
+
+lang: zh-CN

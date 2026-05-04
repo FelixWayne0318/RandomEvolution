@@ -1,0 +1,160 @@
+% 《随机演化论》参考文献库
+% Pandoc/BibTeX 格式
+%
+% 引用方式：
+%   - 在 .md 中用 [@key] 即可生成引用
+%   - Quarto 自动在书末生成参考文献页
+%   - 添加新条目前先在 术语表.md 的「案例归属」/「关键概念」中记录
+%
+% 命名约定：
+%   - book:    专著（含中译本）
+%   - article: 期刊论文
+%   - paper:   会议论文 / 工作论文
+%   - report:  研究报告
+%   - online:  网络资源
+%
+% Key 命名：作者姓 + 年份，多本同年加 a/b/c
+
+% =============================================================================
+% 已被引用（按出现顺序）
+% =============================================================================
+
+@book{tainter1988,
+  author    = {Joseph A. Tainter},
+  title     = {The Collapse of Complex Societies},
+  publisher = {Cambridge University Press},
+  address   = {Cambridge},
+  year      = {1988},
+  isbn      = {978-0521386739},
+  note      = {中译本：《复杂社会的崩溃》}
+}
+
+@book{noelle-neumann1984,
+  author    = {Elisabeth Noelle-Neumann},
+  title     = {The Spiral of Silence: Public Opinion -- Our Social Skin},
+  publisher = {University of Chicago Press},
+  address   = {Chicago},
+  year      = {1984},
+  isbn      = {978-0226588056}
+}
+
+% =============================================================================
+% 预备引用（理论篇可能引用，待写作时确认）
+% =============================================================================
+
+@book{prigogine1984,
+  author    = {Ilya Prigogine and Isabelle Stengers},
+  title     = {Order Out of Chaos: Man's New Dialogue with Nature},
+  publisher = {Bantam Books},
+  year      = {1984},
+  note      = {耗散结构理论的经典阐述}
+}
+
+@article{bak1987,
+  author  = {Per Bak and Chao Tang and Kurt Wiesenfeld},
+  title   = {Self-organized Criticality: An Explanation of {1/f} Noise},
+  journal = {Physical Review Letters},
+  volume  = {59},
+  number  = {4},
+  pages   = {381--384},
+  year    = {1987}
+}
+
+@book{bak1996,
+  author    = {Per Bak},
+  title     = {How Nature Works: The Science of Self-Organized Criticality},
+  publisher = {Copernicus},
+  year      = {1996}
+}
+
+@book{taleb2012,
+  author    = {Nassim Nicholas Taleb},
+  title     = {Antifragile: Things That Gain from Disorder},
+  publisher = {Random House},
+  year      = {2012},
+  note      = {中译本：《反脆弱》}
+}
+
+@book{darwin1859,
+  author    = {Charles Darwin},
+  title     = {On the Origin of Species},
+  publisher = {John Murray},
+  address   = {London},
+  year      = {1859}
+}
+
+@book{lorenz1993,
+  author    = {Edward N. Lorenz},
+  title     = {The Essence of Chaos},
+  publisher = {University of Washington Press},
+  year      = {1993}
+}
+
+@article{lorenz1972,
+  author    = {Edward N. Lorenz},
+  title     = {Predictability: Does the Flap of a Butterfly's Wings in Brazil Set Off a Tornado in Texas?},
+  journal   = {Address at the 139th Annual Meeting of the AAAS},
+  year      = {1972},
+  note      = {未正式发表，引发"蝴蝶效应"概念广泛传播}
+}
+
+@book{minsky1986,
+  author    = {Hyman P. Minsky},
+  title     = {Stabilizing an Unstable Economy},
+  publisher = {Yale University Press},
+  year      = {1986}
+}
+
+@article{bekenstein1973,
+  author  = {Jacob D. Bekenstein},
+  title   = {Black Holes and Entropy},
+  journal = {Physical Review D},
+  volume  = {7},
+  number  = {8},
+  pages   = {2333--2346},
+  year    = {1973}
+}
+
+@article{hawking1975,
+  author  = {Stephen W. Hawking},
+  title   = {Particle Creation by Black Holes},
+  journal = {Communications in Mathematical Physics},
+  volume  = {43},
+  number  = {3},
+  pages   = {199--220},
+  year    = {1975}
+}
+
+% =============================================================================
+% 备用条目（应用篇可能引用）
+% =============================================================================
+
+@book{diamond1997,
+  author    = {Jared Diamond},
+  title     = {Guns, Germs, and Steel: The Fates of Human Societies},
+  publisher = {W. W. Norton},
+  year      = {1997},
+  note      = {中译本：《枪炮、病菌与钢铁》}
+}
+
+@book{harari2011,
+  author    = {Yuval Noah Harari},
+  title     = {Sapiens: A Brief History of Humankind},
+  publisher = {Harper},
+  year      = {2011},
+  note      = {中译本：《人类简史》}
+}
+
+@book{kuhn1962,
+  author    = {Thomas S. Kuhn},
+  title     = {The Structure of Scientific Revolutions},
+  publisher = {University of Chicago Press},
+  year      = {1962}
+}
+
+% =============================================================================
+% 添加新条目时
+% 1. 在本文件按主题位置插入
+% 2. 在 术语表.md「案例归属」表中登记 BibTeX key
+% 3. 正文用 [@key] 或 [@key1; @key2] 引用
+% =============================================================================

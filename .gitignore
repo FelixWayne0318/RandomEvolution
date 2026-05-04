@@ -205,3 +205,23 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Quarto build artifacts
+/_book/
+/.quarto/
+*.tex
+!filters/*.tex
+site_libs/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Word/Office temporary files (in case of paste-from-Word workflow)
+~$*
+*.docx#
+
+# Local writing drafts (per CLAUDE.md convention)
+/drafts/
