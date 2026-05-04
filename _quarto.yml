@@ -2,15 +2,29 @@ project:
   type: book
   output-dir: _book
 
+# =============================================================================
+# 书籍元数据
+# =============================================================================
 book:
   title: "随机演化论"
   subtitle: "随机性如何塑造宇宙、生命与文明"
-  author: "魏永江"
+  author:
+    - name: "魏永江"
   date: today
+  date-format: "YYYY 年 M 月"
   language: zh
+  description: |
+    从一条公理出发，推导出五条核心定律和一系列推论，
+    用统一的演化逻辑解释从宇宙到文明的一切系统兴衰。
+  keyword: "随机演化, 复杂系统, 反脆弱, 演化型系统, 崩溃与重组, 科普"
   search: true
   repo-url: https://github.com/FelixWayne0318/RandomEvolution
+  repo-branch: main
   repo-actions: [edit, issue]
+  sharing: [twitter, linkedin]
+  page-footer:
+    left: "© 2026 魏永江 · 本作品采用 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-Hans) 许可"
+    right: "用 [Quarto](https://quarto.org) 构建"
   sidebar:
     style: docked
     collapse-level: 2
@@ -36,18 +50,20 @@ book:
       chapters:
         - 第四部分_未来篇.md
 
+# =============================================================================
+# 自定义渲染过滤器
+# =============================================================================
 filters:
   - filters/github-alerts.lua
 
+# =============================================================================
+# 输出格式
+# =============================================================================
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
-    mainfont: '"Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", serif'
-    monofont: '"JetBrains Mono", "Sarasa Mono SC", monospace'
-    fontsize: 1.05em
-    linestretch: 1.7
+      light: [cosmo, theme.scss]
+      dark: [darkly, theme.scss]
     code-overflow: wrap
     toc: true
     toc-depth: 3
@@ -57,6 +73,9 @@ format:
     anchor-sections: true
     citations-hover: true
     footnotes-hover: true
+    link-external-newwindow: true
+    mermaid:
+      theme: neutral
 
   pdf:
     documentclass: scrbook

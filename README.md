@@ -65,6 +65,18 @@ quarto preview
 
 启动本地服务器，文件保存即自动刷新浏览器。
 
+## 自动出版
+
+每次 push 到 `main` 分支后，GitHub Actions 会自动用 Quarto 渲染网页版并部署到 GitHub Pages。
+
+**首次启用步骤**（仅需做一次）：
+
+1. push 到 `main` 触发首次构建（会自动创建 `gh-pages` 分支）
+2. 仓库 `Settings → Pages → Build and deployment`，将 Source 设为 `Deploy from a branch`，分支选 `gh-pages` / `(root)`
+3. 等 1-2 分钟，访问 `https://felixwayne0318.github.io/RandomEvolution/` 即可看到在线书
+
+工作流文件见 [`.github/workflows/publish.yml`](./.github/workflows/publish.yml)。
+
 ## 写作约定
 
 - 所有正文使用 Markdown，详见 [CLAUDE.md](./CLAUDE.md)
@@ -74,3 +86,9 @@ quarto preview
 ## 评估提示词
 
 `评估提示词.md` 收录了对引言/章节进行多维度审查的标准提示词，可用于自评或交叉评审。
+
+## 版权
+
+正文采用 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-Hans) 许可（署名–非商业–禁止演绎）。
+构建配置（`_quarto.yml`、`filters/`、`theme.scss`、`.github/workflows/`）以 MIT 许可发布，可自由复用。
+详见 [LICENSE](./LICENSE)。

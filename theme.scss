@@ -1,0 +1,219 @@
+/*-- scss:defaults --*/
+
+// 字体栈：优先 Web 字体（Noto Serif/Sans SC），逐级回退到系统字体
+$font-family-sans-serif: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+                          "Microsoft YaHei", "微软雅黑", -apple-system,
+                          BlinkMacSystemFont, sans-serif !default;
+
+$font-family-serif:      "Noto Serif SC", "Source Han Serif SC",
+                          "Songti SC", "宋体", "SimSun", "Times New Roman",
+                          serif !default;
+
+$font-family-monospace:  "JetBrains Mono", "Sarasa Mono SC",
+                          "Fira Code", "Consolas", "Courier New", monospace !default;
+
+// 正文：衬线体（更适合长篇阅读）
+$body-font-family: $font-family-serif;
+$font-size-base:   1.05rem;
+$line-height-base: 1.85;
+
+// 标题：无衬线体（中文书籍主流做法）
+$headings-font-family:    $font-family-sans-serif;
+$headings-font-weight:    600;
+$headings-line-height:    1.4;
+
+// 主色：深青（理性、克制）
+$primary:   #2c5f8d;
+$secondary: #b85c38;
+
+/*-- scss:rules --*/
+
+// 引入 Google Fonts 的 Noto Serif/Sans SC（中文宋体/黑体的高质量开源版本）
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+
+// =============================================================================
+// 中文段落约定：首行缩进 2 字符 + 两端对齐
+// =============================================================================
+main p {
+  text-indent: 2em;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+// 但以下场景不应缩进
+main h1 + p,
+main h2 + p,
+main h3 + p,
+main h4 + p,
+main h5 + p,
+main h6 + p,
+.callout p,
+blockquote p,
+li p,
+li,
+figcaption,
+.subtitle,
+table p {
+  text-indent: 0;
+}
+
+// =============================================================================
+// 字间距与行间距微调（中文显示更通透）
+// =============================================================================
+body {
+  letter-spacing: 0.02em;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.06em;
+}
+
+// =============================================================================
+// 标题层级
+// =============================================================================
+h1 {
+  font-size: 2.1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid $primary;
+  padding-bottom: 0.6rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: $primary;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+// =============================================================================
+// 引用块：左侧色条 + 浅色背景
+// =============================================================================
+blockquote {
+  border-left: 4px solid $primary;
+  background: rgba(44, 95, 141, 0.05);
+  padding: 0.9em 1.3em;
+  margin: 1.4em 0;
+  color: #444;
+  font-style: normal;  // 中文斜体（伪斜）效果差，关掉
+  border-radius: 0 4px 4px 0;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+// =============================================================================
+// Callout：圆角 + 更柔和的留白
+// =============================================================================
+.callout {
+  border-radius: 8px;
+  margin: 1.6em 0;
+}
+
+.callout-body {
+  font-size: 1rem;
+}
+
+// =============================================================================
+// Mermaid 图表：强制使用中文字体
+// =============================================================================
+.mermaid svg text,
+.mermaid svg .nodeLabel,
+.mermaid svg .edgeLabel {
+  font-family: $font-family-sans-serif !important;
+  font-size: 14px !important;
+}
+
+// =============================================================================
+// 表格：清爽细线
+// =============================================================================
+table {
+  font-size: 0.97em;
+  border-collapse: collapse;
+}
+
+table th {
+  font-family: $font-family-sans-serif;
+  background: rgba(44, 95, 141, 0.08);
+  font-weight: 600;
+}
+
+table td, table th {
+  padding: 0.6em 0.9em;
+}
+
+// =============================================================================
+// 链接：低调下划线
+// =============================================================================
+a {
+  color: $primary;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(44, 95, 141, 0.3);
+  transition: all 0.15s ease;
+}
+
+a:hover {
+  background: rgba(44, 95, 141, 0.08);
+  border-bottom-color: $primary;
+}
+
+// =============================================================================
+// 代码：等宽字体 + 浅背景
+// =============================================================================
+code {
+  font-family: $font-family-monospace;
+  font-size: 0.92em;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+// =============================================================================
+// 强调：粗体加深，斜体保留作者意图
+// =============================================================================
+strong {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+// =============================================================================
+// 脚注：紧凑显示
+// =============================================================================
+.footnotes {
+  font-size: 0.92em;
+  border-top: 1px solid #ddd;
+  margin-top: 3em;
+  padding-top: 1.5em;
+}
+
+// =============================================================================
+// 阅读宽度：限制单行字数（中文最佳阅读宽度约 30-40 字）
+// =============================================================================
+main {
+  max-width: 760px;
+}
+
+@media (min-width: 1400px) {
+  main {
+    max-width: 820px;
+  }
+}
