@@ -73,7 +73,7 @@ quarto preview
 
 1. push 到 `main` 触发首次构建（会自动创建 `gh-pages` 分支）
 2. 仓库 `Settings → Pages → Build and deployment`，将 Source 设为 `Deploy from a branch`，分支选 `gh-pages` / `(root)`
-3. 等 1-2 分钟，访问 `https://felixwayne0318.github.io/RandomEvolution/` 即可看到在线书
+3. 等 1-2 分钟，访问 `https://felixwayne0318.github.io/RandomEvolution/` 即可看到在线书（**GitHub Pages 启用后链接才生效**）
 
 工作流文件见 [`.github/workflows/publish.yml`](./.github/workflows/publish.yml)。
 
