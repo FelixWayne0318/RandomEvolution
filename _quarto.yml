@@ -1,0 +1,84 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "随机演化论"
+  subtitle: "随机性如何塑造宇宙、生命与文明"
+  author: "Felix Wayne"
+  date: today
+  language: zh
+  search: true
+  repo-url: https://github.com/FelixWayne0318/RandomEvolution
+  repo-actions: [edit, issue]
+  sidebar:
+    style: docked
+    collapse-level: 2
+  chapters:
+    - index.qmd
+    - 引言初稿.md
+    - part: "第一部分：理论篇"
+      chapters:
+        - 第一部分_理论篇.md
+    - part: "第二部分：应用篇"
+      chapters:
+        - 第二部分_应用篇/01_宇宙.md
+        - 第二部分_应用篇/02_生命.md
+        - 第二部分_应用篇/03_生态.md
+        - 第二部分_应用篇/04_社会.md
+        - 第二部分_应用篇/05_文明.md
+        - 第二部分_应用篇/06_经济.md
+        - 第二部分_应用篇/07_技术.md
+    - part: "第三部分：哲学篇"
+      chapters:
+        - 第三部分_哲学篇.md
+    - part: "第四部分：未来篇"
+      chapters:
+        - 第四部分_未来篇.md
+
+filters:
+  - filters/github-alerts.lua
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    mainfont: '"Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", serif'
+    monofont: '"JetBrains Mono", "Sarasa Mono SC", monospace'
+    fontsize: 1.05em
+    linestretch: 1.7
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: "本章目录"
+    number-sections: false
+    smooth-scroll: true
+    anchor-sections: true
+    citations-hover: true
+    footnotes-hover: true
+
+  pdf:
+    documentclass: scrbook
+    classoption: ["UTF8", "openany", "fontset=none"]
+    pdf-engine: xelatex
+    CJKmainfont: "Noto Serif CJK SC"
+    CJKsansfont: "Noto Sans CJK SC"
+    mainfont: "Latin Modern Roman"
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=2.5cm
+      - right=2.5cm
+    linestretch: 1.5
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    colorlinks: true
+
+  epub:
+    toc: true
+    toc-depth: 3
+    epub-cover-image: false
+
+lang: zh-CN
